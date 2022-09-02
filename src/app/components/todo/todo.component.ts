@@ -11,8 +11,6 @@ export class TodoComponent implements OnInit {
 
   todos:Todo[];
 
-
-
   constructor(private store:Store<{todos:Todo[]}>) {
       store.pipe(select('todos')).subscribe((values)=>{
         this.todos=values;

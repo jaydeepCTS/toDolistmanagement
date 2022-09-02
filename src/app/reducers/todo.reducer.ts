@@ -10,7 +10,10 @@ const intialState:Todo[]=[
 export function TodoReducer(state=intialState,action:ActionParent){
     switch(action.type){
         case ToDoActionType.Add:
-            return [...state,action.payload]            
+            return [...state,action.payload];
+        case ToDoActionType.Remove:
+            [...state.splice(action.payload,1)] 
+            return [...state]           
         default:
             return state;
     }
