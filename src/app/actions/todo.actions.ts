@@ -7,8 +7,15 @@ export class ActionParent implements Action{
 }
 
 export class TodoAdd implements ActionParent{
-    type:ToDoActionType.Add;
+    type=ToDoActionType.Add;
 
+    constructor(public payload:any){
+
+    }
+}
+
+export class TodoRemove implements ActionParent{
+    type=ToDoActionType.Remove;
     constructor(public payload:any){
 
     }
